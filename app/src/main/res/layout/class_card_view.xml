@@ -10,15 +10,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
+        <!-- Sample Image -->
         <ImageView
             android:id="@+id/class_image"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_launcher_foreground"/>
+            tools:src="@drawable/ic_launcher_foreground" />
 
         <TextView
             android:id="@+id/class_name"
@@ -26,15 +27,80 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/class_image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Artificer"/>
+            tools:text="Class Name"/>
 
         <TextView
             android:id="@+id/class_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Support"
+            tools:text="Type"
             app:layout_constraintTop_toBottomOf="@id/class_name"
             app:layout_constraintStart_toStartOf="@id/class_name"/>
+
+        <TextView
+            android:id="@+id/class_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/class_type"
+            app:layout_constraintStart_toStartOf="@id/class_name"
+            tools:text="id"/>
+
+        <TextView
+            android:id="@+id/class_description_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/class_image"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Description:"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/class_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/class_description_title"
+            app:layout_constraintStart_toStartOf="@id/class_description_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="16dp"
+            android:background="#eeeeee"
+            tools:text="A priest of the Old Faith, wielding the powers of nature — moonlight and plant growth, fire and lightning — and adopting animal forms"/>
+
+        <TextView
+            android:id="@+id/class_origin_book_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/class_description"
+            app:layout_constraintStart_toStartOf="@id/class_description_title"
+            android:text="Book:"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/class_origin_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/class_origin_book_title"
+            app:layout_constraintStart_toStartOf="@id/class_description"
+            android:background="#eeeeee"
+            tools:text="Origin"/>
+
+        <TextView
+            android:id="@+id/class_page_number_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/class_origin_book"
+            app:layout_constraintStart_toStartOf="@id/class_description_title"
+            android:text="Page Number:"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/class_page_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/class_page_number_title"
+            app:layout_constraintStart_toStartOf="@id/class_description"
+            android:background="#eeeeee"
+            tools:text="Page Number"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

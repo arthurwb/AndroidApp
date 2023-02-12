@@ -21,11 +21,19 @@ class ClassesAdapter(private val classes: List<DndClass>) : RecyclerView.Adapter
         holder.classImage.setImageResource(dndClass.image)
         holder.className.text = dndClass.name
         holder.classType.text = dndClass.type
+        holder.classId.text = "Id: " + dndClass.id
+        holder.classDescription.text = dndClass.description
+        holder.classOrigin.text = dndClass.origin
+        holder.classPageNum.text = "" + dndClass.pageNum
     }
 
     class ClassesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val classImage: ImageView = itemView.findViewById(R.id.class_image)
         val className: TextView = itemView.findViewById(R.id.class_name)
         val classType: TextView = itemView.findViewById(R.id.class_type)
+        val classId: TextView = itemView.findViewById(R.id.class_id)
+        val classDescription: TextView = itemView.findViewById(R.id.class_description)
+        val classOrigin: TextView = itemView.findViewById(R.id.class_origin_book)
+        val classPageNum: TextView = itemView.findViewById(R.id.class_page_number)
     }
 }
