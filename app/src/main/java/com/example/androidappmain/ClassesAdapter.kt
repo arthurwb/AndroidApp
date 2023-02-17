@@ -25,6 +25,9 @@ class ClassesAdapter(private val classes: List<DndClass>) :
                 "name" to classLocation.name,
                 "id" to classLocation.id,
                 "image" to classLocation.image,
+                "type" to classLocation.type,
+                "origin" to classLocation.origin,
+                "page" to classLocation.pageNum,
                 "description" to classLocation.description
             )
 

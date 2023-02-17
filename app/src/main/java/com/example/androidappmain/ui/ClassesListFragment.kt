@@ -24,31 +24,73 @@ class ClassesListFragment : Fragment() {
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        //characters
+
         val classes = mutableListOf<DndClass>()
 
-        //genders
         val classType = mutableListOf("Tank", "Ranged DPS", "Melee DPS", "Healer", "Support")
-        //characterLocations
-        val classOrigin = mutableListOf(
-            "Player's Handbook",
-            "Xanathar's Guide to Everything",
-            "Tasha's Cauldron of Everything",
-            "Homebrew"
-        )
-        //nameMods
-        val dndClassNames = mutableListOf("Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Error")
-        //characterNames -> Maybe replace with a random ID
 
-        for (i in 0..6) {
+        val artificer = createClass(
+            "Artificer",
+            "Eberron: Rising from the Last War",
+            (0..300).random(),
+            "${classType[1]}/${classType[4]}",
+            1,
+            "Sample"
+        )
+        val barbarian = createClass(
+            "Barbarian",
+            "Player's Handbook",
+            (0..300).random(),
+            "${classType[0]}",
+            2,
+            "Sample"
+        )
+        val bard = createClass(
+            "Bard",
+            "Player's Handbook",
+            (0..300).random(),
+            "${classType[1]}/${classType[4]}",
+            3,
+            "Sample"
+        )
+        val cleric = createClass(
+            "Cleric",
+            "Player's Handbook",
+            (0..300).random(),
+            "${classType[3]}/${classType[1]}",
+            4,
+            "Sample"
+        )
+        val druid = createClass(
+            "Druid",
+            "Player's Handbook",
+            (0..300).random(),
+            "${classType[0]}/${classType[1]}/${classType[2]}/${classType[3]}/${classType[4]}",
+            5,
+            "Sample"
+        )
+        val fighter = createClass(
+            "Fighter",
+            "Player's Handbook",
+            (0..300).random(),
+            "${classType[0]}/${classType[2]}",
+            6,
+            "Sample"
+        )
+        val error = createClass(
+            "Error",
+            "Error",
+            -1,
+            "Error",
+            -1,
+            "Error"
+        )
+
+        val classList = mutableListOf<DndClass>(artificer, barbarian, bard, cleric, druid, fighter, error)
+
+        for (i in 0..(classList.size-1)) {
             classes.add(
-                createClass(
-                    dndClassNames[i],
-                    classOrigin.random(),
-                    classType.random(),
-                    i,
-                    (0..200).random()
-                )
+                classList[i]
             )
         }
 
@@ -61,13 +103,14 @@ class ClassesListFragment : Fragment() {
     private fun createClass(
         name: String,
         origin: String,
+        pageNum: Int,
         type: String,
         id: Int,
-        pageNum: Int
+        description: String
     ) = DndClass(
         name = name,
         id = id,
-        description = "Sample Description",
+        description = description,
         image = "https://viterbi-web.usc.edu/~mkperlmu/itp104/assignment_05/interests_page_gallery_layout_images/DnDLogo.jpg",
         type = type,
         origin = origin,

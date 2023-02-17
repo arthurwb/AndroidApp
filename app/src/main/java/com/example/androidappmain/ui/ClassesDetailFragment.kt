@@ -23,9 +23,16 @@ class ClassesDetailFragment : Fragment() {
             val name = requireArguments().getString("name")
             val id = requireArguments().getInt("id")
             val image = requireArguments().getString("image")
+            val type = requireArguments().getString("type")
+            val origin = requireArguments().getString("origin")
+            val page = requireArguments().getInt("page")
             val description = requireArguments().getString("description")
 
-            view.findViewById<TextView>(R.id.class_description).text = description
+            view.findViewById<TextView>(R.id.class_detail_name).text = name
+            view.findViewById<TextView>(R.id.class_detail_type).text = type
+            view.findViewById<TextView>(R.id.class_detail_origin).text = origin
+            view.findViewById<TextView>(R.id.class_detail_page).text = page.toString()
+            view.findViewById<TextView>(R.id.class_detail_description).text = description
         }
 
         return view
