@@ -68,7 +68,7 @@ class ClassesListFragment : Fragment() {
         name = name,
         id = id,
         description = "Sample Description",
-        image = "https://rickandmortyapi.com/api/character/avatar/291.jpeg",
+        image = "https://viterbi-web.usc.edu/~mkperlmu/itp104/assignment_05/interests_page_gallery_layout_images/DnDLogo.jpg",
         type = type,
         origin = origin,
         pageNum = pageNum
