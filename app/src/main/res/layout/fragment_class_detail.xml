@@ -8,26 +8,51 @@
 
     <TextView
         android:id="@+id/class_detail_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
         tools:text="Name"/>
 
     <TextView
         android:id="@+id/class_detail_type"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/class_detail_name"
         app:layout_constraintStart_toStartOf="@id/class_detail_name"
+        android:gravity="center"
         tools:text="Type"/>
+
+    <TextView
+        android:id="@+id/class_detail_description_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/class_detail_type"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/class_description_title"/>
+
+    <TextView
+        android:id="@+id/class_detail_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/class_detail_description_title"
+        app:layout_constraintStart_toStartOf="@id/class_detail_name"
+        android:layout_margin="10dp"
+        android:padding="8dp"
+        android:background="@color/light_grey"
+        tools:text="Description"/>
 
     <TextView
         android:id="@+id/class_detail_origin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/class_detail_type"
+        app:layout_constraintTop_toBottomOf="@id/class_detail_description"
         app:layout_constraintStart_toStartOf="@id/class_detail_name"
+        android:layout_marginTop="10dp"
         tools:text="Origin"/>
 
     <TextView
@@ -37,13 +62,5 @@
         app:layout_constraintTop_toBottomOf="@id/class_detail_origin"
         app:layout_constraintStart_toStartOf="@id/class_detail_name"
         tools:text="Page Number"/>
-
-    <TextView
-        android:id="@+id/class_detail_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/class_detail_page"
-        app:layout_constraintStart_toStartOf="@id/class_detail_name"
-        tools:text="Description"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,7 +54,9 @@ class ClassesAdapter(private val classes: List<DndClass>) :
             .into(holder.classImage)
 
         holder.className.text = classGlide.name
-        holder.classID.text = classGlide.id.toString()
+        val idWithoutText = classGlide.id
+        holder.classID.text = holder.classID.getResources().getString(R.string.class_id_title, idWithoutText)
+
     }
 
     inner class ClassViewHolder(

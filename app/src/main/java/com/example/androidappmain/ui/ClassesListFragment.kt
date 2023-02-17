@@ -35,7 +35,8 @@ class ClassesListFragment : Fragment() {
             (0..300).random(),
             "${classType[1]}/${classType[4]}",
             1,
-            "Sample"
+            view.context.resources.getString(R.string.class_artificer_description),
+            "https://www.enworld.org/data/attachments/25/25385-b7ecb2659a2ad69e504b73de736160d4.jpg"
         )
         val barbarian = createClass(
             "Barbarian",
@@ -43,7 +44,8 @@ class ClassesListFragment : Fragment() {
             (0..300).random(),
             "${classType[0]}",
             2,
-            "Sample"
+            view.context.resources.getString(R.string.class_barbarian_description),
+            "https://www.enworld.org/data/attachments/25/25427-e516d7294e89f2ffec671b85bb8770d8.jpg"
         )
         val bard = createClass(
             "Bard",
@@ -51,7 +53,8 @@ class ClassesListFragment : Fragment() {
             (0..300).random(),
             "${classType[1]}/${classType[4]}",
             3,
-            "Sample"
+            view.context.resources.getString(R.string.class_bard_description),
+            "https://www.enworld.org/data/attachments/25/25453-9e7fa880325abcb7a8fb69930e9d6b5e.jpg"
         )
         val cleric = createClass(
             "Cleric",
@@ -59,7 +62,8 @@ class ClassesListFragment : Fragment() {
             (0..300).random(),
             "${classType[3]}/${classType[1]}",
             4,
-            "Sample"
+            view.context.resources.getString(R.string.class_cleric_description),
+            "https://www.enworld.org/data/attachments/25/25488-c22eacecc312cb6c46b749c0804a1426.jpg"
         )
         val druid = createClass(
             "Druid",
@@ -67,7 +71,8 @@ class ClassesListFragment : Fragment() {
             (0..300).random(),
             "${classType[0]}/${classType[1]}/${classType[2]}/${classType[3]}/${classType[4]}",
             5,
-            "Sample"
+            view.context.resources.getString(R.string.class_druid_description),
+            "https://www.enworld.org/data/attachments/25/25527-b5410377ddef5f14a22e1109e7dca5eb.jpg"
         )
         val fighter = createClass(
             "Fighter",
@@ -75,7 +80,8 @@ class ClassesListFragment : Fragment() {
             (0..300).random(),
             "${classType[0]}/${classType[2]}",
             6,
-            "Sample"
+            view.context.resources.getString(R.string.class_fighter_description),
+            "https://www.enworld.org/data/attachments/25/25643-6603092789799dac8e3efeb566b3795a.jpg"
         )
         val error = createClass(
             "Error",
@@ -83,7 +89,8 @@ class ClassesListFragment : Fragment() {
             -1,
             "Error",
             -1,
-            "Error"
+            "This error have been placed here intentionally",
+            "https://cdn0.iconfinder.com/data/icons/shift-interfaces/32/Error-512.png"
         )
 
         val classList = mutableListOf<DndClass>(artificer, barbarian, bard, cleric, druid, fighter, error)
@@ -106,12 +113,13 @@ class ClassesListFragment : Fragment() {
         pageNum: Int,
         type: String,
         id: Int,
-        description: String
+        description: String,
+        image: String
     ) = DndClass(
         name = name,
         id = id,
         description = description,
-        image = "https://viterbi-web.usc.edu/~mkperlmu/itp104/assignment_05/interests_page_gallery_layout_images/DnDLogo.jpg",
+        image = image,
         type = type,
         origin = origin,
         pageNum = pageNum

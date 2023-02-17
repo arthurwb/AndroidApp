@@ -30,8 +30,8 @@ class ClassesDetailFragment : Fragment() {
 
             view.findViewById<TextView>(R.id.class_detail_name).text = name
             view.findViewById<TextView>(R.id.class_detail_type).text = type
-            view.findViewById<TextView>(R.id.class_detail_origin).text = origin
-            view.findViewById<TextView>(R.id.class_detail_page).text = page.toString()
+            view.findViewById<TextView>(R.id.class_detail_origin).text = view.context.resources.getString(R.string.class_origin_title, origin)
+            view.findViewById<TextView>(R.id.class_detail_page).text = view.context.resources.getString(R.string.class_page_title, page)
             view.findViewById<TextView>(R.id.class_detail_description).text = description
         }
 
